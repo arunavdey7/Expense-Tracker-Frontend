@@ -6,7 +6,7 @@ export const getMonthlyExpenditure = async (date) => {
             'Content-type':'Application/json'
         }
       }
-    const response = await fetch(`/expenses?date=${date}`, requestOptions)
+    const response = await fetch(`http://54.196.230.223:8080/expenses?date=${date}`, requestOptions)
     const {
         success,
         total_expenditure
@@ -30,7 +30,7 @@ export const getMonthlyTransactions = async (date) => {
             'Content-type':'Application/json'
         }
       }
-    const response = await fetch(`/expenses?date=${date}`, requestOptions)
+    const response = await fetch(`http://54.196.230.223:8080/expenses?date=${date}`, requestOptions)
     const {
         success,
         transactions

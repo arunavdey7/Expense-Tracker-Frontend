@@ -9,7 +9,7 @@ export const login = async (data) => {
             'token': localStorage.getItem('token')
         }
       }
-    const response = await fetch("/login", requestOptions)
+    const response = await fetch("http://54.196.230.223:8080/login", requestOptions)
     const {
         success
     } = await response.json()
