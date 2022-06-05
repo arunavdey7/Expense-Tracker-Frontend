@@ -21,23 +21,16 @@ const HomePage = () =>
     }
     
     useEffect(() => {
-        async function fetchMyAPI() {
-          var {
-              success,
-              total_expenditure
-          } = await getMonthlyExpenditure(date.replace('/','-'))
-          if(success)
-            setExpenditure(total_expenditure)
-        }
         async function fetchMyAPI2() {
             var {
                 success,
-                transactions
+                transactions,
+                total_expenditure
             } = await getMonthlyTransactions(date.replace('/','-'))
             if(success)
               setTransactions(transactions)
+              setExpenditure(total_expenditure)
           }
-        fetchMyAPI()
         fetchMyAPI2()
       }, [date])
     
@@ -52,7 +45,7 @@ const HomePage = () =>
         if(status)
             setLoginStatus(true)
     }
-    console.info(transactions)
+    
     return(
         <>
             <h1 id= "heading">Expense Tracker</h1>
